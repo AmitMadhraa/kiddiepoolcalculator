@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate how many people can comfortably use your kiddie pool at once with our free online Capacity Calculator. Get personalized recommendations based on pool size and user preferences.">
+    <meta name="keywords" content="kiddie pool capacity, pool capacity calculator, how many people in kiddie pool, safe pool capacity, kiddie pool occupancy">
+    <title>Kiddie Pool Capacity Calculator | Safe Occupancy Estimator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="canonical" href="https://kiddiepoolcalculators.com/capacity-calculator.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Kiddie Pool Capacity Calculator">
+    <meta property="og:description" content="Calculate how many people can comfortably use your kiddie pool at once with our free online Capacity Calculator.">
+    <meta property="og:image" content="images/capacity-calculator-og.jpg">
+    <meta property="og:url" content="https://kiddiepoolcalculators.com/capacity-calculator.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kiddie Pool Capacity Calculator">
+    <meta name="twitter:description" content="Calculate how many people can comfortably use your kiddie pool at once with our free online Capacity Calculator.">
+    <meta name="twitter:image" content="images/capacity-calculator-og.jpg">
+    
+    <!-- Structured Data for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Kiddie Pool Capacity Calculator",
+      "url": "https://kiddiepoolcalculators.com/capacity-calculator.html",
+      "description": "Calculate how many people can comfortably use your kiddie pool at once with our free online Capacity Calculator.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many people can safely use a kiddie pool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The safe capacity of a kiddie pool depends on its size, shape, and depth. As a general rule, each child needs about 8-10 square feet of water surface area, while adults need 15-20 square feet. Our Capacity Calculator provides personalized recommendations based on your specific pool dimensions and user preferences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does age affect kiddie pool capacity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, age significantly affects kiddie pool capacity. Younger children (toddlers) require less space individually but need more supervision, which can reduce overall capacity. Older children and adults require more square footage per person. Our calculator takes age groups into account when determining the recommended capacity for your pool."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I increase the capacity of my kiddie pool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To increase the capacity of your kiddie pool, consider: 1) Upgrading to a larger pool with more surface area, 2) Implementing a rotation system where different groups use the pool at scheduled times, 3) Setting up multiple smaller pools instead of one, or 4) Creating designated activity zones within larger pools to optimize space usage."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="site-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Kiddie Pool Calculators Logo">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#calculators">Calculators</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="row">
+            <!-- Left Ad Space -->
+            <div class="col col-fixed-160">
+                <div class="ad-space ad-vertical">
+                    <p>Advertisement Space</p>
+                </div>
+            </div>
+            
+            <div class="col">
+                <!-- Calculator Header -->
+                <div class="calculator-header">
+                    <h1>Kiddie Pool Capacity Calculator</h1>
+                    <p class="calculator-description">Determine how many people can comfortably use your kiddie pool at once based on pool dimensions, user age groups, and comfort preferences.</p>
+                </div>
+                
+                <div class="calculator-container capacity-calculator">
+                    <form id="capacityForm" class="calculator-form">
+                        <!-- Error container for validation messages -->
+                        <div id="errorContainer" class="error-container" aria-live="polite"></div>
+                        
+                        <!-- Pool Information Section -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Pool Information</h3>
+                            
+                            <div class="form-group">
+                                <label for="poolType">Pool Type:</label>
+                                <select id="poolType" name="poolType" required>
+                                    <option value="">Select Pool Type</option>
+                                    <option value="inflatable">Inflatable Pool</option>
+                                    <option value="hard-plastic">Hard Plastic Pool</option>
+                                    <option value="framed">Metal Frame Pool</option>
+                                    <option value="semi-rigid">Semi-Rigid Pool</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="poolShape">Pool Shape:</label>
+                                <select id="poolShape" name="poolShape" required>
+                                    <option value="">Select Shape</option>
+                                    <option value="round">Round/Circular</option>
+                                    <option value="rectangular">Rectangular</option>
+                                    <option value="oval">Oval</option>
+                                    <option value="irregular">Irregular/Custom</option>
+                                </select>
+                            </div>
+                            
+                            <div id="dimensionsContainer">
+                                <!-- Dimensions will be dynamically shown based on shape selection -->
+                                <div id="roundDimensions" class="dimension-group">
+                                    <div class="form-group">
+                                        <label for="diameter">Diameter:</label>
+                                        <div class="dimension-input-group">
+                                            <input type="number" id="diameter" name="diameter" min="1" step="0.1" class="dimension-input" required>
+                                            <select id="diameterUnit" name="diameterUnit" class="dimension-unit">
+                                                <option value="feet">feet</option>
+                                                <option value="meters">meters</option>
+                                                <option value="inches">inches</option>
+                                                <option value="cm">centimeters</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div id="rectangularDimensions" class="dimension-group" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="length">Length:</label>
+                                        <div class="dimension-input-group">
+                                            <input type="number" id="length" name="length" min="1" step="0.1" class="dimension-input" required>
+                                            <select id="lengthUnit" name="lengthUnit" class="dimension-unit">
+                                                <option value="feet">feet</option>
+                                                <option value="meters">meters</option>
+                                                <option value="inches">inches</option>
+                                                <option value="cm">centimeters</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="width">Width:</label>
+                                        <div class="dimension-input-group">
+                                            <input type="number" id="width" name="width" min="1" step="0.1" class="dimension-input" required>
+                                            <select id="widthUnit" name="widthUnit" class="dimension-unit">
+                                                <option value="feet">feet</option>
+                                                <option value="meters">meters</option>
+                                                <option value="inches">inches</option>
+                                                <option value="cm">centimeters</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div id="ovalDimensions" class="dimension-group" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="majorAxis">Length (Major Axis):</label>
+                                        <div class="dimension-input-group">
+                                            <input type="number" id="majorAxis" name="majorAxis" min="1" step="0.1" class="dimension-input" required>
+                                            <select id="majorAxisUnit" name="majorAxisUnit" class="dimension-unit">
+                                                <option value="feet">feet</option>
+                                                <option value="meters">meters</option>
+                                                <option value="inches">inches</option>
+                                                <option value="cm">centimeters</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="minorAxis">Width (Minor Axis):</label>
+                                        <div class="dimension-input-group">
+                                            <input type="number" id="minorAxis" name="minorAxis" min="1" step="0.1" class="dimension-input" required>
+                                            <select id="minorAxisUnit" name="minorAxisUnit" class="dimension-unit">
+                                                <option value="feet">feet</option>
+                                                <option value="meters">meters</option>
+                                                <option value="inches">inches</option>
+                                                <option value="cm">centimeters</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div id="irregularDimensions" class="dimension-group" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="surfaceArea">Approximate Surface Area:</label>
+                                        <div class="dimension-input-group">
+                                            <input type="number" id="surfaceArea" name="surfaceArea" min="1" step="0.1" class="dimension-input" required>
+                                            <select id="surfaceAreaUnit" name="surfaceAreaUnit" class="dimension-unit">
+                                                <option value="square-feet">sq ft</option>
+                                                <option value="square-meters">sq m</option>
+                                            </select>
+                                        </div>
+                                        <small class="form-help-text">If you're unsure, measure the longest and widest points and use the rectangular calculator as an approximation.</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="poolDepth">Water Depth:</label>
+                                <div class="dimension-input-group">
+                                    <input type="number" id="poolDepth" name="poolDepth" min="1" step="0.1" class="dimension-input" required>
+                                    <select id="poolDepthUnit" name="poolDepthUnit" class="dimension-unit">
+                                        <option value="inches">inches</option>
+                                        <option value="cm">centimeters</option>
+                                        <option value="feet">feet</option>
+                                        <option value="meters">meters</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- User Preferences Section -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">User Preferences</h3>
+                            
+                            <div class="form-group">
+                                <label for="ageGroups">Primary Age Groups:</label>
+                                <select id="ageGroups" name="ageGroups" required>
+                                    <option value="">Select Age Group</option>
+                                    <option value="toddlers">Toddlers (1-3 years)</option>
+                                    <option value="preschoolers">Preschoolers (3-5 years)</option>
+                                    <option value="children">Children (6-12 years)</option>
+                                    <option value="mixed-children">Mixed Children Ages</option>
+                                    <option value="family">Family (Adults & Children)</option>
+                                    <option value="adults">Adults Only</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="comfortLevel">Desired Comfort Level:</label>
+                                <select id="comfortLevel" name="comfortLevel" required>
+                                    <option value="">Select Comfort Level</option>
+                                    <option value="spacious">Spacious (Maximum Comfort)</option>
+                                    <option value="comfortable">Comfortable (Recommended)</option>
+                                    <option value="cozy">Cozy (Economical Use of Space)</option>
+                                    <option value="packed">Packed (Maximum Capacity)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="activityLevel">Expected Activity Level:</label>
+                                <select id="activityLevel" name="activityLevel" required>
+                                    <option value="">Select Activity Level</option>
+                                    <option value="low">Low (Sitting/Relaxing)</option>
+                                    <option value="moderate">Moderate (Light Play)</option>
+                                    <option value="high">High (Active Play/Splashing)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="supervisionRatio">Adult Supervision Ratio:</label>
+                                <select id="supervisionRatio" name="supervisionRatio" required>
+                                    <option value="">Select Supervision Ratio</option>
+                                    <option value="high">High (1 adult per 1-2 children)</option>
+                                    <option value="medium">Medium (1 adult per 3-4 children)</option>
+                                    <option value="low">Low (1 adult per 5+ children)</option>
+                                    <option value="none">No supervision needed (adults only)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="button" id="calculateButton" class="button">Calculate Pool Capacity</button>
+                    </form>
+                    
+                    <!-- Results Section -->
+                    <div id="results" class="calculator-results" style="display: none;" aria-live="polite">
+                        <h3>Pool Capacity Results</h3>
+                        
+                        <div class="result-section">
+                            <div class="result-item">
+                                <h4>Recommended Capacity</h4>
+                                <div id="recommendedCapacity" class="result-value">-</div>
+                                <p class="result-description">This is the recommended number of people for optimal comfort and safety.</p>
+                            </div>
+                            
+                            <div class="result-item">
+                                <h4>Maximum Capacity</h4>
+                                <div id="maximumCapacity" class="result-value">-</div>
+                                <p class="result-description">This is the absolute maximum number of people your pool can safely accommodate.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="result-section">
+                            <h4>Pool Surface Area</h4>
+                            <div id="poolSurfaceArea" class="result-value">-</div>
+                        </div>
+                        
+                        <div class="result-section">
+                            <h4>Space Per Person</h4>
+                            <div id="spacePerPerson" class="result-value">-</div>
+                        </div>
+                        
+                        <div class="result-section">
+                            <h4>Safety Considerations</h4>
+                            <ul id="safetyConsiderations" class="result-list">
+                                <!-- Safety considerations will be dynamically populated -->
+                            </ul>
+                        </div>
+                        
+                        <div class="result-section">
+                            <h4>Capacity Optimization Tips</h4>
+                            <ul id="optimizationTips" class="result-list">
+                                <!-- Optimization tips will be dynamically populated -->
+                            </ul>
+                        </div>
+                        
+                        <div class="capacity-visualization">
+                            <h4>Visual Representation</h4>
+                            <div id="capacityVisualization" class="visualization-container">
+                                <!-- Visual representation will be dynamically generated -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- How to Use Section -->
+                <div class="help-section">
+                    <h2>How to Use This Calculator</h2>
+                    <div class="help-content">
+                        <p>Our Kiddie Pool Capacity Calculator helps you determine the optimal and maximum number of people who can safely use your pool at once. Follow these steps:</p>
+                        <ol>
+                            <li><strong>Enter Pool Information:</strong> Select your pool type, shape, and enter its dimensions. Be as accurate as possible for the best results.</li>
+                            <li><strong>Specify User Preferences:</strong> Select the primary age groups that will use the pool, your desired comfort level, expected activity level, and supervision ratio.</li>
+                            <li><strong>Calculate:</strong> Click the "Calculate Pool Capacity" button to generate your results.</li>
+                            <li><strong>Review Results:</strong> The calculator will provide recommended and maximum capacity figures, along with safety considerations and optimization tips.</li>
+                        </ol>
+                        <p>Remember that these calculations are guidelines based on industry standards for personal space in water. Always prioritize safety and supervision, especially with young children.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">How is kiddie pool capacity calculated?</h3>
+                        <div class="faq-answer">
+                            <p>Kiddie pool capacity is calculated based on several factors:</p>
+                            <ol>
+                                <li><strong>Surface Area:</strong> The total water surface area available (calculated differently based on pool shape).</li>
+                                <li><strong>Age-Appropriate Space Requirements:</strong> Industry standards recommend:
+                                    <ul>
+                                        <li>Toddlers (1-3 years): 6-8 square feet per child</li>
+                                        <li>Preschoolers (3-5 years): 8-10 square feet per child</li>
+                                        <li>Children (6-12 years): 10-15 square feet per child</li>
+                                        <li>Adults: 15-20 square feet per person</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Activity Level Adjustments:</strong> More active play requires more space per person.</li>
+                                <li><strong>Comfort Level Preferences:</strong> Your selected comfort level adjusts the space requirements accordingly.</li>
+                                <li><strong>Supervision Considerations:</strong> Adult supervisors are counted in the total capacity.</li>
+                            </ol>
+                            <p>Our calculator takes all these factors into account to provide both a recommended capacity (optimal for comfort and safety) and a maximum capacity (the absolute maximum that should not be exceeded).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Why does my pool feel crowded even when below capacity?</h3>
+                        <div class="faq-answer">
+                            <p>Several factors can make a pool feel more crowded than the calculated capacity suggests:</p>
+                            <ol>
+                                <li><strong>Activity Level:</strong> Active play with splashing and movement requires more space than calm sitting.</li>
+                                <li><strong>Age Mix:</strong> Different age groups have different space needs and movement patterns.</li>
+                                <li><strong>Water Toys:</strong> Floats, toys, and play equipment occupy space that could otherwise be used by people.</li>
+                                <li><strong>Temperature:</strong> On very hot days, people may want more personal space for comfort.</li>
+                                <li><strong>Pool Shape:</strong> Irregular shapes may create "dead zones" where people don't naturally gather.</li>
+                                <li><strong>Personal Preference:</strong> Some individuals simply prefer more personal space than others.</li>
+                            </ol>
+                            <p>If your pool consistently feels crowded, consider selecting the "Spacious" comfort level in our calculator for more conservative capacity estimates.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Are there legal limits to kiddie pool capacity?</h3>
+                        <div class="faq-answer">
+                            <p>Unlike commercial pools, there are typically no specific legal regulations for residential kiddie pool capacity. However:</p>
+                            <ol>
+                                <li><strong>Homeowner's Insurance:</strong> Some insurance policies may have guidelines or restrictions.</li>
+                                <li><strong>HOA Rules:</strong> If you live in a community with a Homeowner's Association, they may have rules about pool usage.</li>
+                                <li><strong>Manufacturer Guidelines:</strong> Pool manufacturers often provide capacity recommendations that should be followed to maintain warranty coverage and ensure structural integrity.</li>
+                                <li><strong>Local Ordinances:</strong> Some municipalities may have safety regulations that indirectly affect capacity.</li>
+                            </ol>
+                            <p>While not legally binding in most areas, the capacity guidelines provided by our calculator are based on industry safety standards and best practices. Following these recommendations helps ensure a safe and enjoyable experience for all users.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Related Calculators Section -->
+                <div class="related-calculators">
+                    <h3>Related Kiddie Pool Calculators</h3>
+                    <div class="related-calculators-list">
+                        <div class="related-calculator-item">
+                            <h4 class="related-calculator-title"><a href="water-volume-calculator.html">Water Volume Calculator</a></h4>
+                            <p class="related-calculator-description">Calculate how much water your kiddie pool holds and how long it will take to fill.</p>
+                        </div>
+                        
+                        <div class="related-calculator-item">
+                            <h4 class="related-calculator-title"><a href="weight-calculator.html">Weight Calculator</a></h4>
+                            <p class="related-calculator-description">Calculate the weight of your filled kiddie pool to ensure your surface can support it.</p>
+                        </div>
+                        
+                        <div class="related-calculator-item">
+                            <h4 class="related-calculator-title"><a href="storage-space-calculator.html">Storage Space Calculator</a></h4>
+                            <p class="related-calculator-description">Determine how much space you'll need to store your kiddie pool during the off-season.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Ad Space -->
+            <div class="col col-fixed-160">
+                <div class="ad-space ad-vertical">
+                    <p>Advertisement Space</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Kiddie Pool Calculators</h3>
+                    <p>Free online tools for kiddie pool owners</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#calculators">Calculators</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear">2025</span> Kiddie Pool Calculators. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for this specific calculator -->
+    <script src="js/capacity-calculator.js" defer></script>
+    
+    <!-- Dynamic copyright year script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

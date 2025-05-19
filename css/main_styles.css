@@ -1,0 +1,883 @@
+/* 
+ * Main Styles for Kiddie Pool Calculators
+ * A single, central CSS file for all calculator pages
+ */
+
+/* ===== RESET AND BASE STYLES ===== */
+:root {
+  /* Color Variables */
+  --primary-color: #0078d7;
+  --secondary-color: #2b88d8;
+  --accent-color: #00b294;
+  --text-color: #333333;
+  --light-text: #666666;
+  --background-color: #ffffff;
+  --light-background: #f5f5f5;
+  --border-color: #dddddd;
+  --success-color: #107c10;
+  --warning-color: #ff8c00;
+  --error-color: #e81123;
+  
+  /* Typography */
+  --base-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --heading-font: var(--base-font);
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  
+  /* Box Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--base-font);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  line-height: 1.3;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button, .button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-family: var(--base-font);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover, .button:hover {
+  background-color: var(--secondary-color);
+}
+
+button:active, .button:active {
+  transform: translateY(1px);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  font-family: var(--base-font);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-md);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.2);
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Enhanced Grid System */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -var(--spacing-md);
+}
+
+.col {
+  flex: 1;
+  padding: 0 var(--spacing-md);
+  min-width: 0; /* Prevents flex items from overflowing */
+}
+
+/* Column width utilities */
+.col-1 { flex: 0 0 8.333%; max-width: 8.333%; }
+.col-2 { flex: 0 0 16.667%; max-width: 16.667%; }
+.col-3 { flex: 0 0 25%; max-width: 25%; }
+.col-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+.col-5 { flex: 0 0 41.667%; max-width: 41.667%; }
+.col-6 { flex: 0 0 50%; max-width: 50%; }
+.col-7 { flex: 0 0 58.333%; max-width: 58.333%; }
+.col-8 { flex: 0 0 66.667%; max-width: 66.667%; }
+.col-9 { flex: 0 0 75%; max-width: 75%; }
+.col-10 { flex: 0 0 83.333%; max-width: 83.333%; }
+.col-11 { flex: 0 0 91.667%; max-width: 91.667%; }
+.col-12 { flex: 0 0 100%; max-width: 100%; }
+
+/* Responsive column utilities */
+@media (min-width: 768px) {
+  .col-md-1 { flex: 0 0 8.333%; max-width: 8.333%; }
+  .col-md-2 { flex: 0 0 16.667%; max-width: 16.667%; }
+  .col-md-3 { flex: 0 0 25%; max-width: 25%; }
+  .col-md-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+  .col-md-5 { flex: 0 0 41.667%; max-width: 41.667%; }
+  .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+  .col-md-7 { flex: 0 0 58.333%; max-width: 58.333%; }
+  .col-md-8 { flex: 0 0 66.667%; max-width: 66.667%; }
+  .col-md-9 { flex: 0 0 75%; max-width: 75%; }
+  .col-md-10 { flex: 0 0 83.333%; max-width: 83.333%; }
+  .col-md-11 { flex: 0 0 91.667%; max-width: 91.667%; }
+  .col-md-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+@media (min-width: 992px) {
+  .col-lg-1 { flex: 0 0 8.333%; max-width: 8.333%; }
+  .col-lg-2 { flex: 0 0 16.667%; max-width: 16.667%; }
+  .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+  .col-lg-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+  .col-lg-5 { flex: 0 0 41.667%; max-width: 41.667%; }
+  .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+  .col-lg-7 { flex: 0 0 58.333%; max-width: 58.333%; }
+  .col-lg-8 { flex: 0 0 66.667%; max-width: 66.667%; }
+  .col-lg-9 { flex: 0 0 75%; max-width: 75%; }
+  .col-lg-10 { flex: 0 0 83.333%; max-width: 83.333%; }
+  .col-lg-11 { flex: 0 0 91.667%; max-width: 91.667%; }
+  .col-lg-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: var(--light-background);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.site-navigation ul {
+  display: flex;
+  list-style: none;
+}
+
+.site-navigation li {
+  margin-left: var(--spacing-md);
+}
+
+/* ===== BREADCRUMBS ===== */
+.breadcrumbs {
+  padding: var(--spacing-sm) 0;
+  margin-bottom: var(--spacing-md);
+  font-size: 0.875rem;
+  color: var(--light-text);
+}
+
+.breadcrumbs ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "›";
+  margin: 0 var(--spacing-xs);
+}
+
+/* ===== CALCULATOR COMMON STYLES ===== */
+.calculator-container {
+  background-color: var(--light-background);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calculator-header {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calculator-description {
+  margin-bottom: var(--spacing-lg);
+  font-size: 0.95rem;
+  color: var(--light-text);
+  line-height: 1.5;
+}
+
+.calculator-form {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+}
+
+.form-row {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.calculator-results {
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  display: none;
+}
+
+.calculator-results.active {
+  display: block;
+}
+
+.result-item {
+  margin-bottom: var(--spacing-md);
+}
+
+.result-label {
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.result-value {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+/* ===== HELP SECTION ===== */
+.help-section {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.help-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--primary-color);
+}
+
+.help-section h3 {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.1rem;
+}
+
+.help-section ol, .help-section ul {
+  padding-left: 1.5rem;
+}
+
+.help-section li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.help-section li ul {
+  margin-top: var(--spacing-xs);
+}
+
+.faq-item {
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--spacing-md);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-color);
+}
+
+.faq-answer {
+  color: var(--light-text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.faq-answer p {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ===== RELATED CALCULATORS ===== */
+.related-calculators {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.related-calculators h3 {
+  margin-bottom: var(--spacing-md);
+}
+
+.related-calculators-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.related-calculator-item {
+  background-color: var(--light-background);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.related-calculator-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.related-calculator-title {
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.related-calculator-description {
+  font-size: 0.875rem;
+  color: var(--light-text);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--light-background);
+  padding: var(--spacing-lg) 0;
+  margin-top: auto;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+}
+
+.footer-links li:not(:last-child) {
+  margin-right: var(--spacing-md);
+}
+
+.copyright {
+  margin-top: var(--spacing-md);
+  font-size: 0.875rem;
+  color: var(--light-text);
+  text-align: center;
+}
+
+/* ===== AD SPACES ===== */
+.ad-space {
+  background-color: var(--light-background);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  color: var(--light-text);
+}
+
+.ad-vertical {
+  min-height: 600px;
+}
+
+.ad-horizontal {
+  min-height: 90px;
+}
+
+/* ===== DIRECTORY PAGE SPECIFIC STYLES ===== */
+.directory-intro {
+  margin-bottom: var(--spacing-xl);
+}
+
+.calculators-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.calculator-card {
+  background-color: var(--light-background);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calculator-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.calculator-card-title {
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.calculator-card-description {
+  color: var(--light-text);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.calculator-card-link {
+  display: inline-block;
+  font-weight: 500;
+}
+
+.calculators-grid .full-width-ad {
+  grid-column: 1 / -1; /* Span all columns */
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .site-navigation {
+    margin-top: var(--spacing-sm);
+  }
+  
+  .site-navigation ul {
+    justify-content: center;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-links ul {
+    justify-content: center;
+    margin-top: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust specific elements instead of changing root font size */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  h4 { font-size: 1.125rem; }
+  
+  .calculator-container {
+    padding: var(--spacing-md);
+  }
+  
+  .calculators-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .calculator-description {
+    font-size: 0.9rem;
+  }
+  
+  .result-value {
+    font-size: 1.1rem;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.col-fixed-160 {
+  flex: 0 0 160px;
+}
+
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+.mt-5 { margin-top: var(--spacing-xl); }
+
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-5 { margin-bottom: var(--spacing-xl); }
+
+.hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Form validation styles */
+.invalid-input {
+  border-color: var(--error-color);
+  background-color: rgba(232, 17, 35, 0.05);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: rgba(232, 17, 35, 0.1);
+  border-left: 3px solid var(--error-color);
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== INDIVIDUAL CALCULATOR SPECIFIC STYLES ===== */
+
+/* Kiddie Pool Water Volume Calculator */
+.water-volume-calculator .result-value {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Unit selector styling */
+.water-volume-calculator .unit-selector {
+  background-color: var(--light-background);
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.water-volume-calculator .dimension-input {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Dimension input groups */
+.dimension-input-group {
+  display: flex;
+  margin-bottom: var(--spacing-md);
+}
+
+.dimension-input-group input {
+  flex: 3;
+  margin-bottom: 0;
+}
+
+.dimension-input-group select {
+  flex: 1;
+  margin-bottom: 0;
+  min-width: 80px;
+}
+
+/* Results section enhancements */
+.water-volume-calculator .calculator-results {
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.water-volume-calculator .calculator-results.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Print styles for water volume calculator */
+@media print {
+  .water-volume-calculator .calculator-results {
+    display: block !important;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .calculator-actions, 
+  .ad-space, 
+  .site-navigation,
+  .related-calculators {
+    display: none !important;
+  }
+}
+
+/* Kiddie Pool Water Temperature Calculator */
+.water-temperature-calculator .temperature-slider {
+  width: 100%;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Kiddie Pool Chemical Treatment Calculator */
+.chemical-treatment-calculator .chemical-warning {
+  background-color: rgba(255, 140, 0, 0.1);
+  border-left: 4px solid var(--warning-color);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Kiddie Pool Evaporation Rate Calculator */
+.evaporation-calculator .evaporation-chart {
+  height: 200px;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Kiddie Pool Setup Time Estimator */
+.setup-time-calculator .setup-steps {
+  margin-top: var(--spacing-md);
+}
+
+.setup-time-calculator .setup-step {
+  display: flex;
+  margin-bottom: var(--spacing-sm);
+}
+
+.setup-time-calculator .setup-step-number {
+  background-color: var(--primary-color);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+/* Kiddie Pool Weight Calculator */
+.weight-calculator .weight-warning {
+  background-color: rgba(232, 17, 35, 0.1);
+  border-left: 4px solid var(--error-color);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+/* Kiddie Pool Heating Cost Calculator */
+.heating-cost-calculator .cost-breakdown {
+  margin-top: var(--spacing-md);
+}
+
+/* Kiddie Pool Drainage Time Calculator */
+.drainage-calculator .drainage-progress {
+  height: 20px;
+  background-color: var(--light-background);
+  border-radius: var(--border-radius-sm);
+  margin-top: var(--spacing-md);
+  overflow: hidden;
+}
+
+.drainage-calculator .drainage-progress-bar {
+  height: 100%;
+  background-color: var(--primary-color);
+  width: 0;
+  transition: width 0.5s ease;
+}
+
+/* Kiddie Pool Sun Exposure Calculator */
+.sun-exposure-calculator .sun-diagram {
+  height: 200px;
+  margin: var(--spacing-md) 0;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Kiddie Pool Maintenance Schedule Generator */
+.maintenance-schedule-calculator .schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing-md);
+}
+
+.maintenance-schedule-calculator .schedule-table th,
+.maintenance-schedule-calculator .schedule-table td {
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-sm);
+  text-align: left;
+}
+
+.maintenance-schedule-calculator .schedule-table th {
+  background-color: var(--light-background);
+}
+
+/* Kiddie Pool Storage Space Calculator */
+.storage-calculator .storage-illustration {
+  text-align: center;
+  margin: var(--spacing-md) 0;
+}
+
+/* Kiddie Pool Capacity Calculator */
+.capacity-calculator .capacity-illustration {
+  text-align: center;
+  margin: var(--spacing-md) 0;
+}
+
+/* Kiddie Pool Cleaning Supply Calculator */
+.cleaning-supply-calculator .supply-list {
+  margin-top: var(--spacing-md);
+  list-style-position: inside;
+}
+
+/* Kiddie Pool Water Replacement Schedule */
+.water-replacement-calculator .replacement-timeline {
+  margin-top: var(--spacing-md);
+  height: 80px;
+  background-color: var(--light-background);
+  border-radius: var(--border-radius-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.water-replacement-calculator .replacement-marker {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: var(--primary-color);
+}
+
+/* Kiddie Pool Cost Comparison Calculator */
+.cost-comparison-calculator .comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing-md);
+}
+
+.cost-comparison-calculator .comparison-table th,
+.cost-comparison-calculator .comparison-table td {
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-sm);
+  text-align: left;
+}
+
+.cost-comparison-calculator .comparison-table th {
+  background-color: var(--light-background);
+}
+
+.cost-comparison-calculator .best-value {
+  background-color: rgba(16, 124, 16, 0.1);
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact us for any questions about Your Tool Name. Get support and help with our online calculator tool.">
+    <meta name="keywords" content="contact us, support, help, feedback">
+    <meta name="author" content="Your Tool Name">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com/contact">
+
+    <!-- Favicon (same as index) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/contact">
+    <meta property="og:title" content="Contact Us - Your Tool Name">
+    <meta property="og:description" content="Contact us for any questions about Your Tool Name. Get support and help with our online calculator tool.">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yourdomain.com/contact">
+    <meta name="twitter:title" content="Contact Us - Your Tool Name">
+    <meta name="twitter:description" content="Contact us for any questions about Your Tool Name. Get support and help with our online calculator tool.">
+    <meta name="twitter:image" content="https://yourdomain.com/twitter-image.jpg">
+
+    <title>Contact Us - Your Tool Name</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- Header (same as above) -->
+    
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <!-- Breadcrumbs -->
+        <nav class="flex mb-8 text-sm" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="/" class="text-gray-700 hover:text-blue-600">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="text-gray-500">Contact</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <div class="max-w-2xl mx-auto">
+            <h1 class="text-3xl font-bold mb-8 text-center">Contact Us</h1>
+            <div class="bg-white rounded-lg shadow-sm p-8">
+                <form class="space-y-6" action="/submit-form" method="POST">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (same as above) -->
+</body>
+</html> 

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate the total cost of owning and maintaining your kiddie pool with our free online Cost Calculator. Get detailed breakdowns of initial, operational, and maintenance expenses.">
+    <meta name="keywords" content="kiddie pool cost, pool maintenance cost, pool ownership cost, kiddie pool budget, pool expense calculator">
+    <title>Kiddie Pool Cost Calculator | Total Ownership Expense Estimator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="canonical" href="https://kiddiepoolcalculators.com/cost-calculator.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Kiddie Pool Cost Calculator">
+    <meta property="og:description" content="Calculate the total cost of owning and maintaining your kiddie pool with our free online Cost Calculator.">
+    <meta property="og:image" content="images/cost-calculator-og.jpg">
+    <meta property="og:url" content="https://kiddiepoolcalculators.com/cost-calculator.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kiddie Pool Cost Calculator">
+    <meta name="twitter:description" content="Calculate the total cost of owning and maintaining your kiddie pool with our free online Cost Calculator.">
+    <meta name="twitter:image" content="images/cost-calculator-og.jpg">
+    
+    <!-- Structured Data for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Kiddie Pool Cost Calculator",
+      "url": "https://kiddiepoolcalculators.com/cost-calculator.html",
+      "description": "Calculate the total cost of owning and maintaining your kiddie pool with our free online Cost Calculator.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a kiddie pool cost to maintain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The cost of maintaining a kiddie pool typically ranges from $50-$300 per season, depending on pool size, type, and usage patterns. This includes water costs ($10-$50), chemicals ($20-$100), electricity for pumps if applicable ($0-$50), cleaning supplies ($10-$30), and miscellaneous items like toys and accessories ($10-$70). Larger pools with filtration systems cost more to maintain than simple inflatable pools. Our Cost Calculator provides a personalized estimate based on your specific pool and usage patterns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a kiddie pool cheaper than a full-size pool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, kiddie pools are significantly cheaper than full-size pools in both initial and ongoing costs. A typical kiddie pool costs $20-$300 to purchase and $50-$300 per season to maintain. In contrast, a permanent in-ground pool costs $30,000-$70,000 to install and $3,000-$5,000 annually to maintain. Even above-ground full-size pools cost $1,500-$5,000 initially with annual maintenance of $500-$1,500. Kiddie pools also consume less water, chemicals, and electricity, making them a much more economical option for families."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I reduce my kiddie pool costs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To reduce kiddie pool costs: 1) Use a pool cover when not in use to reduce water evaporation and chemical loss, 2) Clean regularly to minimize chemical needs, 3) Consider a solar cover or solar rings to naturally heat water instead of electric heaters, 4) Purchase maintenance supplies in bulk during off-season sales, 5) Properly store your pool during off-season to extend its lifespan, 6) Consider a slightly more expensive pool with better durability for long-term savings, and 7) Use a rain barrel to collect water for pool filling where permitted. Our Cost Calculator provides personalized cost-saving recommendations."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="site-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Kiddie Pool Calculators Logo">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#calculators">Calculators</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="row">
+            <!-- Left Ad Space -->
+            <div class="col col-fixed-160">
+                <div class="ad-space ad-vertical">
+                    <p>Advertisement Space</p>
+                </div>
+            </div>
+            
+            <div class="col">
+                <!-- Calculator Header -->
+                <div class="calculator-header">
+                    <h1>Kiddie Pool Cost Calculator</h1>
+                    <p class="calculator-description">Calculate the total cost of owning and maintaining your kiddie pool, including initial purchase, water, chemicals, electricity, and accessories.</p>
+                </div>
+                
+                <div class="calculator-container cost-calculator">
+                    <form id="costForm" class="calculator-form">
+                        <!-- Error container for validation messages -->
+                        <div id="errorContainer" class="error-container" aria-live="polite"></div>
+                        
+                        <!-- Initial Costs Section -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Initial Costs</h3>
+                            
+                            <div class="form-group">
+                                <label for="poolType">Pool Type:</label>
+                                <select id="poolType" name="poolType" required>
+                                    <option value="">Select Pool Type</option>
+                                    <option value="inflatable-basic">Basic Inflatable Pool</option>
+                                    <option value="inflatable-premium">Premium Inflatable Pool</option>
+                                    <option value="hard-plastic">Hard Plastic Pool</option>
+                                    <option value="framed-small">Small Frame Pool (under 12ft)</option>
+                                    <option value="framed-medium">Medium Frame Pool (12-15ft)</option>
+                                    <option value="framed-large">Large Frame Pool (over 15ft)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="poolCost">Pool Purchase Cost:</label>
+                                <div class="cost-input-group">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="poolCost" name="poolCost" min="0" step="0.01" class="cost-input" required>
+                                </div>
+                                <small class="form-help-text">Enter the actual or estimated purchase price of your pool.</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="accessoriesCost">Initial Accessories Cost:</label>
+                                <div class="cost-input-group">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="accessoriesCost" name="accessoriesCost" min="0" step="0.01" class="cost-input" required>
+                                </div>
+                                <small class="form-help-text">Include costs for ladders, covers, ground cloth, etc.</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="equipmentCost">Equipment Cost:</label>
+                                <div class="cost-input-group">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="equipmentCost" name="equipmentCost" min="0" step="0.01" class="cost-input" required>
+                                </div>
+                                <small class="form-help-text">Include costs for pumps, filters, heaters, etc.</small>
+                            </div>
+                        </div>
+                        
+                        <!-- Operational Costs Section -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Operational Costs</h3>
+                            
+                            <div class="form-group">
+                                <label for="waterVolume">Pool Water Volume:</label>
+                                <div class="dimension-input-group">
+                                    <input type="number" id="waterVolume" name="waterVolume" min="1" step="1" class="dimension-input" required>
+                                    <select id="waterVolumeUnit" name="waterVolumeUnit" class="dimension-unit">
+                                        <option value="gallons">gallons</option>
+                                        <option value="liters">liters</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="waterRate">Water Cost Rate:</label>
+                                <div class="cost-input-group">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="waterRate" name="waterRate" min="0" step="0.001" class="cost-input" required>
+                                    <span class="unit-label">per 1000 gallons</span>
+                                </div>
+                                <small class="form-help-text">Check your water bill or local utility for rates.</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="waterChanges">Water Changes Per Season:</label>
+                                <input type="number" id="waterChanges" name="waterChanges" min="1" step="1" required>
+                                <small class="form-help-text">How many times you completely replace the water.</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="electricityUsage">Daily Electricity Usage:</label>
+                                <div class="dimension-input-group">
+                                    <input type="number" id="electricityUsage" name="electricityUsage" min="0" step="0.1" class="dimension-input" required>
+                                    <span class="unit-label">kWh</span>
+                                </div>
+                                <small class="form-help-text">For pumps, filters, heaters. Enter 0 if none.</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="electricityRate">Electricity Rate:</label>
+                                <div class="cost-input-group">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="electricityRate" name="electricityRate" min="0" step="0.001" class="cost-input" required>
+                                    <span class="unit-label">per kWh</span>
+                                </div>
+                                <small class="form-help-text">Check your electricity bill for rates.</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="usageDays">Days of Pool Usage Per Season:</label>
+                                <input type="number" id="usageDays" name="usageDays" min="1" max="365" step="1" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Maintenance Costs Section -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Maintenance Costs</h3>
+                            
+                            <div class="form-group">
+                                <label for="chemicalsCost">Monthly Chemicals Cost:</label>
+                                <div class="cost-input-group">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="chemicalsCost" name="chemicalsCost" min="0" step="0.01" class="cost-input" required>
+                                </div>
+                                <small class="form-help-text">Include chlorine, test strips, algaecide, etc.</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cleaningSuppliesCost">Cleaning Supplies Cost Per Season:</label>
+                                <div class="cost-input-group">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="cleaningSuppliesCost" name="cleaningSuppliesCost" min="0" step="0.01" class="cost-input" required>
+                                </div>
+                                <small class="form-help-text">Include brushes, nets, vacuum, etc.</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="repairCost">Estimated Repair/Replacement Parts Cost Per Season:</label>
+                                <div class="cost-input-group">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" id="repairCost" name="repairCost" min="0" step="0.01" class="cost-input" required>
+                                </div>
+                                <small class="form-help-text">Include patch kits, replacement parts, etc.</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="seasonLength">Pool Season Length:</label>
+                                <div class="dimension-input-group">
+                                    <input type="number" id="seasonLength" name="seasonLength" min="1" max="12" step="1" class="dimension-input" required>
+                                    <span class="unit-label">months</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="poolLifespan">Expected Pool Lifespan:</label>
+                                <div class="dimension-input-group">
+                                    <input type="number" id="poolLifespan" name="poolLifespan" min="1" max="20" step="1" class="dimension-input" required>
+                                    <span class="unit-label">years</span>
+                                </div>
+                                <small class="form-help-text">How many years you expect the pool to last.</small>
+                            </div>
+                        </div>
+                        
+                        <button type="button" id="calculateButton" class="button">Calculate Total Cost</button>
+                    </form>
+                    
+                    <!-- Results Section -->
+                    <div id="results" class="calculator-results" style="display: none;" aria-live="polite">
+                        <h3>Cost Analysis Results</h3>
+                        
+                        <div class="result-section">
+                            <div class="result-item">
+                                <h4>Total First Year Cost</h4>
+                                <div id="firstYearCost" class="result-value">-</div>
+                                <p class="result-description">This includes initial purchase and first year operational costs.</p>
+                            </div>
+                            
+                            <div class="result-item">
+                                <h4>Annual Recurring Cost</h4>
+                                <div id="annualCost" class="result-value">-</div>
+                                <p class="result-description">This is the estimated yearly cost after the first year.</p>
+                            </div>
+                            
+                            <div class="result-item">
+                                <h4>Total Lifetime Cost</h4>
+                                <div id="lifetimeCost" class="result-value">-</div>
+                                <p class="result-description">This is the estimated total cost over the pool's lifespan.</p>
+                            </div>
+                            
+                            <div class="result-item">
+                                <h4>Cost Per Use</h4>
+                                <div id="costPerUse" class="result-value">-</div>
+                                <p class="result-description">This is the estimated cost per day of pool usage.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="result-section">
+                            <h4>Cost Breakdown</h4>
+                            <div id="costBreakdown" class="cost-chart">
+                                <!-- Cost breakdown chart will be dynamically generated -->
+                            </div>
+                        </div>
+                        
+                        <div class="result-section">
+                            <h4>Cost Saving Recommendations</h4>
+                            <ul id="costSavingTips" class="result-list">
+                                <!-- Cost saving tips will be dynamically populated -->
+                            </ul>
+                        </div>
+                        
+                        <div class="result-section">
+                            <h4>Detailed Breakdown</h4>
+                            <table id="detailedBreakdown" class="cost-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>First Year</th>
+                                        <th>Annual</th>
+                                        <th>Lifetime</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Table rows will be dynamically populated -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- How to Use Section -->
+                <div class="help-section">
+                    <h2>How to Use This Calculator</h2>
+                    <div class="help-content">
+                        <p>Our Kiddie Pool Cost Calculator helps you estimate the total cost of owning and maintaining your kiddie pool. Follow these steps:</p>
+                        <ol>
+                            <li><strong>Enter Initial Costs:</strong> Input your pool purchase cost, accessories, and equipment costs.</li>
+                            <li><strong>Specify Operational Details:</strong> Enter water volume, utility rates, and usage patterns.</li>
+                            <li><strong>Add Maintenance Costs:</strong> Include chemicals, cleaning supplies, and repair costs.</li>
+                            <li><strong>Calculate:</strong> Click the "Calculate Total Cost" button to generate your cost analysis.</li>
+                            <li><strong>Review Results:</strong> The calculator will provide first-year costs, annual recurring costs, lifetime costs, and cost-saving recommendations.</li>
+                        </ol>
+                        <p>For the most accurate results, gather your actual purchase receipts and utility bills before using the calculator. If you don't know exact figures, use our suggested estimates as a starting point.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">What factors affect kiddie pool costs the most?</h3>
+                        <div class="faq-answer">
+                            <p>The most significant factors affecting kiddie pool costs include:</p>
+                            <ol>
+                                <li><strong>Pool Type and Size:</strong> Larger pools and those with frames or special features cost more initially and require more water and chemicals.</li>
+                                <li><strong>Water Replacement Frequency:</strong> More frequent water changes increase water costs significantly.</li>
+                                <li><strong>Equipment:</strong> Pumps, filters, and heaters add to both initial costs and ongoing electricity expenses.</li>
+                                <li><strong>Chemical Treatment:</strong> Larger pools and those kept filled for longer periods require more chemical treatment.</li>
+                                <li><strong>Usage Duration:</strong> Longer seasonal use means higher operational costs but better value per use.</li>
+                                <li><strong>Local Utility Rates:</strong> Water and electricity costs vary significantly by location.</li>
+                                <li><strong>Maintenance Habits:</strong> Regular cleaning and proper chemical balance extend pool life and reduce long-term costs.</li>
+                            </ol>
+                            <p>Our calculator takes all these factors into account to provide a comprehensive cost analysis specific to your situation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Should I buy a more expensive kiddie pool?</h3>
+                        <div class="faq-answer">
+                            <p>Whether to invest in a more expensive kiddie pool depends on several factors:</p>
+                            <h4>Reasons to choose a premium pool:</h4>
+                            <ul>
+                                <li><strong>Durability:</strong> Higher-quality materials typically last longer, potentially reducing the cost per year of ownership.</li>
+                                <li><strong>Features:</strong> Better filtration systems, stronger frames, and UV-resistant materials can reduce maintenance costs and effort.</li>
+                                <li><strong>Safety:</strong> Premium pools often have better safety features and more stable construction.</li>
+                                <li><strong>Resale Value:</strong> Quality pools in good condition may retain some resale value.</li>
+                            </ul>
+                            
+                            <h4>When a basic pool might be better:</h4>
+                            <ul>
+                                <li><strong>Short-term Use:</strong> If you only need the pool for one season or occasional use.</li>
+                                <li><strong>Young Children:</strong> For very young children who may outgrow a small pool quickly.</li>
+                                <li><strong>Uncertain Interest:</strong> If you're not sure how much your family will use the pool.</li>
+                                <li><strong>Limited Budget:</strong> When immediate cost constraints are your primary concern.</li>
+                            </ul>
+                            
+                            <p>Our cost calculator can help you compare the lifetime costs of different pool options to make an informed decision based on your specific circumstances.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">How do I budget for unexpected pool costs?</h3>
+                        <div class="faq-answer">
+                            <p>Budgeting for unexpected kiddie pool costs involves planning for both predictable and unpredictable expenses:</p>
+                            <ol>
+                                <li><strong>Create a Pool Maintenance Fund:</strong> Set aside 10-15% of your pool's purchase price annually for unexpected repairs and replacements.</li>
+                                <li><strong>Anticipate Seasonal Variations:</strong> Budget more for extremely hot summers when water evaporation and chemical use increase.</li>
+                                <li><strong>Plan for Accessories Replacement:</strong> Items like pool covers, ladders, and toys typically need replacement every 1-3 seasons.</li>
+                                <li><strong>Consider Equipment Failure:</strong> Pumps and filters have limited lifespans, typically 2-5 years for kiddie pool equipment.</li>
+                                <li><strong>Account for Water Quality Issues:</strong> Algae blooms or water problems may require additional chemicals or complete water replacement.</li>
+                                <li><strong>Prepare for Damage Repair:</strong> Keep patch kits on hand for inflatable pools and budget for potential tears or punctures.</li>
+                                <li><strong>Factor in Upgrades:</strong> As children grow, you might want to upgrade to a larger or more feature-rich pool.</li>
+                            </ol>
+                            <p>A good rule of thumb is to budget an additional 20-30% beyond your calculated annual costs to cover unexpected expenses. This buffer ensures you're prepared for surprises without financial stress.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Related Calculators Section -->
+                <div class="related-calculators">
+                    <h3>Related Kiddie Pool Calculators</h3>
+                    <div class="related-calculators-list">
+                        <div class="related-calculator-item">
+                            <h4 class="related-calculator-title"><a href="water-volume-calculator.html">Water Volume Calculator</a></h4>
+                            <p class="related-calculator-description">Calculate how much water your kiddie pool holds and how long it will take to fill.</p>
+                        </div>
+                        
+                        <div class="related-calculator-item">
+                            <h4 class="related-calculator-title"><a href="water-heating-cost-calculator.html">Water Heating Cost Calculator</a></h4>
+                            <p class="related-calculator-description">Estimate how much it costs to heat your kiddie pool.</p>
+                        </div>
+                        
+                        <div class="related-calculator-item">
+                            <h4 class="related-calculator-title"><a href="cleaning-time-calculator.html">Cleaning Time Calculator</a></h4>
+                            <p class="related-calculator-description">Estimate how long it will take to clean your kiddie pool.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Ad Space -->
+            <div class="col col-fixed-160">
+                <div class="ad-space ad-vertical">
+                    <p>Advertisement Space</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Kiddie Pool Calculators</h3>
+                    <p>Free online tools for kiddie pool owners</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#calculators">Calculators</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear">2025</span> Kiddie Pool Calculators. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for this specific calculator -->
+    <script src="js/cost-calculator.js" defer></script>
+    
+    <!-- Dynamic copyright year script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

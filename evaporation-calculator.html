@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate how much water your kiddie pool loses to evaporation. Free online calculator to estimate water loss and plan for top-ups.">
+    <meta name="keywords" content="kiddie pool evaporation calculator, pool water loss, how much water evaporates from kiddie pool, children's pool evaporation, inflatable pool water loss">
+    <meta name="author" content="Kiddie Pool Calculators">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0078d7">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com/evaporation-calculator.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/evaporation-calculator.html">
+    <meta property="og:title" content="Kiddie Pool Evaporation Rate Calculator - Free Online Tool">
+    <meta property="og:description" content="Calculate how much water your kiddie pool loses to evaporation. Free online calculator to estimate water loss and plan for top-ups.">
+    <meta property="og:image" content="https://yourdomain.com/images/evaporation-calculator-social.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yourdomain.com/evaporation-calculator.html">
+    <meta name="twitter:title" content="Kiddie Pool Evaporation Rate Calculator - Free Online Tool">
+    <meta name="twitter:description" content="Calculate how much water your kiddie pool loses to evaporation. Free online calculator to estimate water loss and plan for top-ups.">
+    <meta name="twitter:image" content="https://yourdomain.com/images/evaporation-calculator-social.jpg">
+
+    <title>Kiddie Pool Evaporation Rate Calculator - Free Online Tool</title>
+    
+    <!-- Single Central CSS File -->
+    <link rel="stylesheet" href="css/main_styles.css">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Calculate Kiddie Pool Evaporation Rate",
+      "description": "Calculate how much water your kiddie pool loses to evaporation using our free online calculator.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Enter Pool Surface Area",
+          "text": "Input the surface area of your kiddie pool in square feet or square meters."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Enter Water Temperature",
+          "text": "Input the temperature of the water in your kiddie pool."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Enter Air Temperature",
+          "text": "Input the ambient air temperature around your kiddie pool."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Enter Humidity Level",
+          "text": "Input the relative humidity percentage in your area."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Select Sun Exposure",
+          "text": "Choose how much direct sunlight your pool receives."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Select Wind Conditions",
+          "text": "Choose the typical wind conditions in your area."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Calculate Evaporation Rate",
+          "text": "Click the calculate button to see how much water your pool loses to evaporation."
+        }
+      ]
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does my kiddie pool lose water so quickly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kiddie pools lose water primarily through evaporation, especially on hot, sunny, or windy days. Small pools have a large surface area relative to their volume, causing them to lose water faster than larger pools. Other factors include splashing during use, minor leaks, and water carried out by swimmers. On a hot summer day (90°F/32°C) with low humidity, a typical kiddie pool can lose 0.25-0.5 inches (0.6-1.3 cm) of water per day to evaporation alone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I reduce evaporation in my kiddie pool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To reduce evaporation in a kiddie pool: 1) Use a pool cover when not in use, 2) Place the pool in a shaded area during the hottest part of the day, 3) Set up a windbreak around the pool if your area is windy, 4) Lower the water temperature if possible, 5) Add a few floating toys which can slightly reduce the exposed water surface, and 6) Fill the pool to a slightly lower level to reduce splashing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I top up my kiddie pool due to evaporation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For most kiddie pools, you'll need to top up water every 1-3 days depending on weather conditions. In hot, dry, or windy conditions, daily top-ups may be necessary. In moderate weather, every 2-3 days is typically sufficient. It's best to maintain the water level at least 2-3 inches below the pool rim to prevent overflow from splashing. Our evaporation calculator can help you estimate how much water you'll need to add and how frequently."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does adding chemicals affect evaporation rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most pool chemicals have minimal effect on evaporation rates. Chlorine and other common sanitizers don't significantly change the evaporation properties of water. However, some specialty chemicals like evaporation reducers (often containing alcohols) can form a thin film on the water surface that reduces evaporation by 30-50%. These are rarely used in kiddie pools and may not be recommended for pools used by young children."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+                <div class="site-header">
+                    <div class="site-title"><a href="index.html">Kiddie Pool Calculators</a></div>
+                    <nav class="site-navigation">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#calculators">Calculators</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+        <nav aria-label="breadcrumb" class="breadcrumbs">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>Kiddie Pool Evaporation Rate Calculator</li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="row">
+            <!-- Left Ad Space -->
+            <div class="col col-fixed-160">
+                <div class="ad-space ad-vertical">
+                    <p>Advertisement Space</p>
+                </div>
+            </div>
+            
+            <!-- Main Calculator Content -->
+            <div class="col">
+                <!-- Calculator Header -->
+                <div class="calculator-header">
+                    <h1>Kiddie Pool Evaporation Rate Calculator</h1>
+                    <p class="calculator-description">Estimate water loss due to evaporation based on temperature, humidity, and pool size to plan for water top-ups.</p>
+                </div>
+                
+                <!-- Calculator Container -->
+                <div class="calculator-container evaporation-calculator">
+                    <form id="evaporationCalculatorForm" class="calculator-form">
+                        <!-- Pool Dimensions Section -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Pool Dimensions</h3>
+                            
+                            <div class="form-group">
+                                <label for="poolShape">Pool Shape:</label>
+                                <select id="poolShape" name="poolShape">
+                                    <option value="circular">Circular/Round</option>
+                                    <option value="rectangular">Rectangular/Square</option>
+                                    <option value="oval">Oval/Elliptical</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Circular Pool Fields -->
+                            <div id="circularFields">
+                                <div class="form-group">
+                                    <label for="diameter">Diameter:</label>
+                                    <div class="dimension-input-group">
+                                        <input type="number" id="diameter" name="diameter" min="1" step="0.1" value="5" class="dimension-input" required>
+                                        <select id="diameterUnit" name="diameterUnit" class="unit-selector">
+                                            <option value="feet">Feet</option>
+                                            <option value="inches">Inches</option>
+                                            <option value="meters">Meters</option>
+                                            <option value="cm">Centimeters</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Rectangular Pool Fields -->
+                            <div id="rectangularFields" class="hidden">
+                                <div class="form-group">
+                                    <label for="length">Length:</label>
+                                    <div class="dimension-input-group">
+                                        <input type="number" id="length" name="length" min="1" step="0.1" value="6" class="dimension-input" required>
+                                        <select id="lengthUnit" name="lengthUnit" class="unit-selector">
+                                            <option value="feet">Feet</option>
+                                            <option value="inches">Inches</option>
+                                            <option value="meters">Meters</option>
+                                            <option value="cm">Centimeters</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="width">Width:</label>
+                                    <div class="dimension-input-group">
+                                        <input type="number" id="width" name="width" min="1" step="0.1" value="4" class="dimension-input" required>
+                                        <select id="widthUnit" name="widthUnit" class="unit-selector">
+                                            <option value="feet">Feet</option>
+                                            <option value="inches">Inches</option>
+                                            <option value="meters">Meters</option>
+                                            <option value="cm">Centimeters</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Oval Pool Fields -->
+                            <div id="ovalFields" class="hidden">
+                                <div class="form-group">
+                                    <label for="ovalLength">Length (longest part):</label>
+                                    <div class="dimension-input-group">
+                                        <input type="number" id="ovalLength" name="ovalLength" min="1" step="0.1" value="6" class="dimension-input" required>
+                                        <select id="ovalLengthUnit" name="ovalLengthUnit" class="unit-selector">
+                                            <option value="feet">Feet</option>
+                                            <option value="inches">Inches</option>
+                                            <option value="meters">Meters</option>
+                                            <option value="cm">Centimeters</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="ovalWidth">Width (widest part):</label>
+                                    <div class="dimension-input-group">
+                                        <input type="number" id="ovalWidth" name="ovalWidth" min="1" step="0.1" value="4" class="dimension-input" required>
+                                        <select id="ovalWidthUnit" name="ovalWidthUnit" class="unit-selector">
+                                            <option value="feet">Feet</option>
+                                            <option value="inches">Inches</option>
+                                            <option value="meters">Meters</option>
+                                            <option value="cm">Centimeters</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Environmental Conditions Section -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Environmental Conditions</h3>
+                            
+                            <div class="form-group">
+                                <label for="waterTemp">Water Temperature:</label>
+                                <div class="dimension-input-group">
+                                    <input type="number" id="waterTemp" name="waterTemp" min="50" max="100" step="1" value="80" class="dimension-input" required>
+                                    <select id="waterTempUnit" name="waterTempUnit" class="unit-selector">
+                                        <option value="fahrenheit">°F</option>
+                                        <option value="celsius">°C</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="airTemp">Air Temperature:</label>
+                                <div class="dimension-input-group">
+                                    <input type="number" id="airTemp" name="airTemp" min="50" max="120" step="1" value="85" class="dimension-input" required>
+                                    <select id="airTempUnit" name="airTempUnit" class="unit-selector">
+                                        <option value="fahrenheit">°F</option>
+                                        <option value="celsius">°C</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="humidity">Relative Humidity:</label>
+                                <div class="dimension-input-group">
+                                    <input type="number" id="humidity" name="humidity" min="0" max="100" step="1" value="50" class="dimension-input" required>
+                                    <div class="unit-selector">%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sunExposure">Sun Exposure:</label>
+                                <select id="sunExposure" name="sunExposure" required>
+                                    <option value="full">Full Sun (6+ hours direct sunlight)</option>
+                                    <option value="partial" selected>Partial Sun (3-6 hours direct sunlight)</option>
+                                    <option value="minimal">Minimal Sun (1-3 hours direct sunlight)</option>
+                                    <option value="shade">Shade (No direct sunlight)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="windCondition">Wind Conditions:</label>
+                                <select id="windCondition" name="windCondition" required>
+                                    <option value="calm">Calm (0-5 mph / 0-8 km/h)</option>
+                                    <option value="light" selected>Light Breeze (5-10 mph / 8-16 km/h)</option>
+                                    <option value="moderate">Moderate Wind (10-20 mph / 16-32 km/h)</option>
+                                    <option value="strong">Strong Wind (20+ mph / 32+ km/h)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="button" id="calculateButton" class="button">Calculate Evaporation Rate</button>
+                    </form>
+                    
+                    <!-- Results Section -->
+                    <div id="results" class="calculator-results" aria-live="polite">
+                        <h3>Evaporation Results</h3>
+                        
+                        <div class="result-item">
+                            <div class="result-label">Daily Water Loss:</div>
+                            <div id="dailyLossResult" class="result-value">0 gallons</div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-label">Weekly Water Loss:</div>
+                            <div id="weeklyLossResult" class="result-value">0 gallons</div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-label">Water Level Drop:</div>
+                            <div id="levelDropResult" class="result-value">0 inches per day</div>
+                        </div>
+                        
+                        <div class="result-item">
+                            <div class="result-label">Recommended Top-up Frequency:</div>
+                            <div id="topupFrequencyResult" class="result-value">Every 0 days</div>
+                        </div>
+                        
+                        <div class="evaporation-chart">
+                            <div id="chartContainer" class="chart-placeholder">
+                                <div class="chart-bar-container">
+                                    <div class="chart-label">Day 1</div>
+                                    <div class="chart-bar" style="height: 20%;"></div>
+                                </div>
+                                <div class="chart-bar-container">
+                                    <div class="chart-label">Day 2</div>
+                                    <div class="chart-bar" style="height: 40%;"></div>
+                                </div>
+                                <div class="chart-bar-container">
+                                    <div class="chart-label">Day 3</div>
+                                    <div class="chart-bar" style="height: 60%;"></div>
+                                </div>
+                                <div class="chart-bar-container">
+                                    <div class="chart-label">Day 4</div>
+                                    <div class="chart-bar" style="height: 80%;"></div>
+                                </div>
+                                <div class="chart-bar-container">
+                                    <div class="chart-label">Day 5</div>
+                                    <div class="chart-bar" style="height: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- How to Use Section -->
+                <div class="help-section">
+                    <h2>How to Use This Calculator</h2>
+                    
+                    <ol>
+                        <li>
+                            <strong>Enter pool dimensions</strong> - Select your pool shape and provide measurements.
+                        </li>
+                        <li>
+                            <strong>Input environmental conditions</strong> - Enter water and air temperatures, humidity, sun exposure, and wind conditions.
+                        </li>
+                        <li>
+                            <strong>Calculate</strong> - Get estimated water loss and recommended top-up frequency.
+                        </li>
+                    </ol>
+                </div>
+                
+                <!-- FAQ Section -->
+                <div class="help-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Why does my kiddie pool lose water so quickly?</h3>
+                        <div class="faq-answer">
+                            <p>Kiddie pools lose water primarily through evaporation, especially on hot, sunny, or windy days. Small pools have a large surface area relative to their volume, causing faster water loss than larger pools.</p>
+                            <p>On a hot summer day (90°F/32°C) with low humidity, a typical kiddie pool can lose 0.25-0.5 inches (0.6-1.3 cm) of water per day to evaporation alone.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">How can I reduce evaporation?</h3>
+                        <div class="faq-answer">
+                            <p>To reduce evaporation:<br>
+                            - Use a pool cover when not in use<br>
+                            - Place the pool in a shaded area<br>
+                            - Set up a windbreak if your area is windy<br>
+                            - Lower the water temperature if possible<br>
+                            - Add floating toys to slightly reduce exposed water surface<br>
+                            - Fill to a lower level to reduce splashing</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">How often should I top up my pool?</h3>
+                        <div class="faq-answer">
+                            <p>For most kiddie pools:<br>
+                            - Hot, dry, or windy conditions: Daily top-ups<br>
+                            - Moderate weather: Every 2-3 days<br>
+                            - Maintain water level at least 2-3 inches below the pool rim</p>
+                            <p>This calculator provides personalized estimates based on your specific conditions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Does adding chemicals affect evaporation rate?</h3>
+                        <div class="faq-answer">
+                            <p>Most pool chemicals have minimal effect on evaporation rates. Chlorine and other common sanitizers don't significantly change the evaporation properties of water.</p>
+                            <p>Some specialty evaporation reducers can form a thin film that reduces evaporation by 30-50%, but these are rarely used in kiddie pools and may not be recommended for young children.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Related Calculators Section -->
+                <div class="related-calculators">
+                    <h3>Related Kiddie Pool Calculators</h3>
+                    <div class="related-calculators-list">
+                        <div class="related-calculator-item">
+                            <h4 class="related-calculator-title"><a href="water-volume-calculator.html">Water Volume Calculator</a></h4>
+                            <p class="related-calculator-description">Calculate the exact amount of water needed to fill your kiddie pool.</p>
+                        </div>
+                        
+                        <div class="related-calculator-item">
+                            <h4 class="related-calculator-title"><a href="water-temperature-calculator.html">Water Temperature Calculator</a></h4>
+                            <p class="related-calculator-description">Estimate how long it will take for your pool water to reach a comfortable temperature.</p>
+                        </div>
+                        
+                        <div class="related-calculator-item">
+                            <h4 class="related-calculator-title"><a href="sun-exposure-calculator.html">Sun Exposure Calculator</a></h4>
+                            <p class="related-calculator-description">Determine optimal placement for your kiddie pool based on sun patterns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Ad Space -->
+            <div class="col col-fixed-160">
+                <div class="ad-space ad-vertical">
+                    <p>Advertisement Space</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Kiddie Pool Calculators</h3>
+                    <p>Free online tools for kiddie pool owners</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#calculators">Calculators</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear">2025</span> Kiddie Pool Calculators. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for this specific calculator -->
+    <script src="js/evaporation-calculator.js" defer></script>
+    
+    <!-- Dynamic copyright year script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
